@@ -988,53 +988,55 @@
         });
     </script>
 
-    <script>
+   <script>
+document.addEventListener("DOMContentLoaded", function () {
 
-        const ctx = document.getElementById('parameterChart');
+    const ctx = document.getElementById('parameterChart');
 
-        new Chart(ctx, {
-            type: 'doughnut',
+    new Chart(ctx, {
+        type: 'doughnut',
 
-            data: {
-                labels: [
-                    'Jarak Sesar Aktif',
-                    'Litologi',
-                    'Kemiringan Lereng',
-                    'Kepadatan Bangunan',
-                    'Kepadatan Penduduk',
-                    'Kelompok Rentan'
+        data: {
+            labels: [
+                'Jarak Sesar Aktif (27%)',
+                'Litologi (26%)',
+                'Kemiringan Lereng (21%)',
+                'Kepadatan Bangunan (10%)',
+                'Kepadatan Penduduk (9%)',
+                'Kelompok Rentan (7%)'
+            ],
+
+            datasets: [{
+                data: [27, 26, 21, 10, 9, 7],
+
+                backgroundColor: [
+                    '#ff6384',
+                    '#36a2eb',
+                    '#ffce56',
+                    '#4bc0c0',
+                    '#9966ff',
+                    '#ff9f40'
                 ],
 
-                datasets: [{
-                    data: [27, 26, 21, 10, 9, 7],
+                borderWidth: 1
+            }]
+        },
 
-                    backgroundColor: [
-                        '#ff6384',
-                        '#36a2eb',
-                        '#ffce56',
-                        '#4bc0c0',
-                        '#9966ff',
-                        '#ff9f40'
-                    ],
+        options: {
+            responsive: true,
 
-                    borderWidth: 1
-                }]
+            plugins: {
+                legend: {
+                    display: false
+                }
             },
 
-            options: {
+            cutout: '60%'
+        }
+    });
 
-                responsive: true,
-
-                plugins: {
-                    legend: {
-                        display: false
-                    }
-                },
-
-                cutout: '60%'
-            }
-        });
-    </script>
+});
+</script>
 
     <script>
 
